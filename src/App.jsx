@@ -1,44 +1,98 @@
 import { useState } from "react";
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  const [num1, setNum1] = useState();
+  const [num2, setNum2] = useState();
+  const [result, setResult] = useState(0);
 
-  const onClickAdd = () => {
-    setCount(count + 1);
+  const onChangeNum1 = (e) => {
+    setNum1(e.target.value);
   };
 
-  const onClickSubtract = () => {
-    if (count <= 0) {
-      alert("count의 값이 0보다 작을 수 없습니다!");
+  const onChangeNum2 = (e) => {
+    setNum2(e.target.value);
+  };
+
+  const onClickAdd = () => {
+    if (isNaN(num1) || isNaN(num2)) {
+      alert("숫자를 입력해주세요.");
       return;
     }
 
-    setCount((prev) => {
-      return prev - 1;
-    });
+    setResult(parseInt(num1) + parseInt(num2));
   };
 
-  // const onClickSubtract = () => {
-  //   setCount(count - 1);
-  // };
-  // 10번, 16번 동일함
+  const onClickSubtract = () => {
+    if (isNaN(num1) || isNaN(num2)) {
+      alert("숫자를 입력해주세요.");
+      return;
+    }
+
+    setResult(parseInt(num1) - parseInt(num2));
+  };
+
+  const onClickMultiply = () => {
+    if (isNaN(num1) || isNaN(num2)) {
+      alert("숫자를 입력해주세요.");
+      return;
+    }
+
+    setResult(parseInt(num1) * parseInt(num2));
+  };
+
+  const onClickDivide = () => {
+    if (isNaN(num1) || isNaN(num2)) {
+      alert("숫자를 입력해주세요.");
+      return;
+    }
+
+    setResult(parseInt(num1) / parseInt(num2));
+  };
 
   return (
     <div className="bg-red-100 min-h-screen flex flex-col justify-center items-center">
-      <div>{count}</div>
-      <button
-        className="bg-green-300 w-12 h-12 rounded-full"
-        onClick={onClickAdd}
-      >
-        +
-      </button>
-      <button
-        className="mt-4 bg-red-300 w-12 h-12 rounded-full"
-        onClick={onClickSubtract}
-      >
-        -
-      </button>
-      {/* onClick 불러올 때 중괄호 사용 */}
+      <h1 className="text-2xl font-bold mb-4">Calculator</h1>
+      <div className="text-3xl font-black mb-4">{result}</div>
+      <div className="mb-4">
+        <input
+          className="border-2 focus:outline-none focus:border-gray-400 rounded-lg px-4 py-2 text-xl"
+          type="text"
+          value={num1}
+          onChange={onChangeNum1}
+        />
+        <input
+          className="border-2 focus:outline-none focus:border-gray-400 rounded-lg px-4 py-2 text-xl ml-4"
+          type="text"
+          value={num2}
+          onChange={onChangeNum2}
+        />
+      </div>
+      <div>
+        <button
+          onClick={onClickAdd}
+          className="border-2 px-2 py-1 rounded-lg border-red-500 text-red-500"
+        >
+          Add
+        </button>
+        <button
+          onClick={onClickSubtract}
+          className="border-2 px-2 py-1 rounded-lg border-blue-500 text-blue-500 ml-4"
+        >
+          Subtract
+        </button>
+        <button
+          onClick={onClickMultiply}
+          className="border-2 px-2 py-1 rounded-lg border-yellow-500 text-yellow-500 ml-4"
+        >
+          Multiply
+        </button>
+        <button
+          onClick={onClickDivide}
+          className="border-2 px-2 py-1 rounded-lg border-green-500 text-green-500 ml-4"
+        >
+          Divide
+        </button>
+      </div>
     </div>
   );
 };
