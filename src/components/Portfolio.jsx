@@ -1,16 +1,17 @@
 import PortfolioCard from "./PortfolioCard";
-import portFolioData from "../portFolioData.json";
+import projectData from "../projectData.json";
 
 function Portfolio() {
   return (
     <ul className="bg-indigo-100 max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-8 py-8">
-      {portFolioData.map((v, i) => {
+      {projectData.map((v, i) => {
         return (
           <PortfolioCard
             key={i}
-            image={v.image}
+            index={i}
             title={v.title}
-            additionalExplanation={v.additionalExplanation}
+            desc={v.desc}
+            image={v.image}
           />
         );
       })}
