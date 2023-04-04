@@ -1,0 +1,42 @@
+[
+  {
+    "image": ["HTML LOGO"],
+    "title": ["HTML"],
+    "additionalExplanation": ["Joy's Portfolio"]
+  },
+  {
+    "image": "CSS LOGO",
+    "title": "CSS",
+    "additionalExplanation": ["Joy's Portfolio"]
+  },
+  {
+    "image": "JavaScript LOGO",
+    "title": "JavaScript",
+    "additionalExplanation": ["Joy's Portfolio"]
+  },
+  {
+    "image": "React LOGO",
+    "title": "React",
+    "additionalExplanation": ["Joy's Portfolio"]
+  },
+  {
+    "image": "BLOCKCHAIN LOGO",
+    "title": "BLOCKCHAIN",
+    "additionalExplanation": ["Joy's Portfolio"]
+  },
+  {
+    "image": "RUBY LOGO",
+    "title": "RUBY",
+    "additionalExplanation": ["Joy's Portfolio"]
+  },
+  {
+    "image": "CALENDAR",
+    "title": "Calendar",
+    "additionalExplanation": ["Joy's Portfolio"]
+  },
+  {
+    "image": "CALCULATOR",
+    "title": "Calculator",
+    "additionalExplanation": ["Joy's Portfolio"]
+  }
+]
